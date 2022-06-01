@@ -60,7 +60,7 @@ public class LoginViewModel extends AndroidViewModel {
                     Log.d("token",response.toString());
 
                     SharedPreferences.Editor editor = sp.edit();
-                    String token = "Bearer" + response.body();
+                    String token ="Bearer "+response.body();
                     editor.putString("token",token);
                     editor.commit();
                     Log.d("Sp",sp.getString("token","-1"));

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -20,7 +21,7 @@ import com.example.inmobiliarianovara.modelo.Propietario;
 public class PerfilFragment extends Fragment {
 
     private EditText etDni,etNombre,etApellido,etTelefono,etContraseña,etEmail;
-    private Button btnEditar;
+    private Button btnEditarPerfil;
     private PerfilViewModel perfilViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState)
@@ -34,11 +35,11 @@ public class PerfilFragment extends Fragment {
             {
                 @Override
                 public void onChanged(Propietario propietario) {
-                    etDni.setText(propietario.getDni().toString());
+                    etDni.setText(propietario.getDni());
                     etNombre.setText(propietario.getNombre());
                     etApellido.setText(propietario.getApellido());
                     etTelefono.setText(propietario.getTelefono());
-                    etContraseña.setText(propietario.getContraseña());
+                    //etContraseña.setText(propietario.getContraseña());
                     etEmail.setText(propietario.getEmail());
                 }
             }
@@ -58,7 +59,13 @@ public class PerfilFragment extends Fragment {
         perfilViewModel.getTextoBoton().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                btnEditar.setText(s);
+                btnEditarPerfil.setText(s);
+            }
+        });
+        perfilViewModel.getMensaje().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                Toast.makeText(getContext(),s,Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -69,27 +76,27 @@ public class PerfilFragment extends Fragment {
 
     private void inicializarVista(View root)
     {
-        etDni = root.findViewById(R.id.etCodigoInquilino);
-        etNombre = root.findViewById(R.id.etNombreInquilino);
-        etApellido = root.findViewById(R.id.etApellidoInquilino);
-        etTelefono = root.findViewById(R.id.etTelefonoInquilino);
-        etContraseña = root.findViewById(R.id.etEmailInquilino);
-        etEmail = root.findViewById(R.id.etDni);
+        etDni = root.findViewById(R.id.etDniPerfil);
+        etNombre = root.findViewById(R.id.etNombrePerfil);
+        etApellido = root.findViewById(R.id.etApellidoPerfil);
+        etTelefono = root.findViewById(R.id.etTelefonoPerfil);
+        etContraseña = root.findViewById(R.id.etContraseñaPerfil);
+        etEmail = root.findViewById(R.id.etEmailPerfil);
 
-        btnEditar = root.findViewById(R.id.btnPagos);
+        btnEditarPerfil = root.findViewById(R.id.btnEditarPerfil);
 
-        btnEditar.setOnClickListener(new View.OnClickListener() {
+        btnEditarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Propietario propietario = new Propietario();
-                propietario.setDni(Long.parseLong(etDni.getText().toString()));
+                propietario.setDni(etDni.getText().toString());
                 propietario.setNombre(etNombre.getText().toString());
                 propietario.setApellido(etApellido.getText().toString());
                 propietario.setTelefono(etTelefono.getText().toString());
                 propietario.setContraseña(etContraseña.getText().toString());
                 propietario.setEmail(etEmail.getText().toString());
 
-                String texto = btnEditar.getText().toString();
+                String texto = btnEditarPerfil.getText().toString();
 
                 perfilViewModel.accionBoton(texto,propietario);
 

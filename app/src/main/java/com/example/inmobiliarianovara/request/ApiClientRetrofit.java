@@ -19,6 +19,8 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 
 
 public class ApiClientRetrofit {
@@ -63,10 +65,19 @@ public class ApiClientRetrofit {
         @GET("Propietario")
         Call<Propietario> Perfil(@Header("Authorization") String token);
 
+        //Editar Perfil
+        @PUT("Propietario")
+        Call<Propietario> EditarPerfil(@Body Propietario propietario,@Header("Authorization") String token);
+
 
         //obtener inmuebles
         @GET("Inmueble/")
         Call<List<Inmueble>> listaDeInmuebles(@Header("Authorization") String token);
+
+        //Obtener inmuebles por id
+        @GET("Inmueble/{id}")
+        Call<Inmueble> inmuebleXId(@Path("id") int id, @Header ("Authorization") String token);
+
 
 
     }
