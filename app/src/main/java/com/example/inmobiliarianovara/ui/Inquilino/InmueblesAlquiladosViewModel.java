@@ -61,12 +61,10 @@ public class InmueblesAlquiladosViewModel extends AndroidViewModel {
         dato.enqueue(new Callback<List<Contrato>>() {
             @Override
             public void onResponse(Call<List<Contrato>> call, Response<List<Contrato>> response) {
-
                 if (response.isSuccessful()){
                     response.body().forEach(e -> {
                         Contrato contrato= new Contrato(e.getIdContrato(),e.getFechaInicio(),e.getFechaFinal(),
-                                e.getInmueble().getPrecio(),e.getInquilino(), e.getInmueble(),e.getNombreGarante(),
-                                e.getTelefonoGarante());
+                                e.getInmueble().getPrecio(),e.getInquilino(), e.getInmueble(),e.getGarante());
                                 listaContrato.add(contrato);
                     });
 

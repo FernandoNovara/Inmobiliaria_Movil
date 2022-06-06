@@ -53,11 +53,11 @@ public class InquilinoFragment extends Fragment {
             public void onChanged(Contrato contrato) {
                 etCodigo.setText(contrato.getInquilino().getIdInquilino() + " ");
                 etNombre.setText(contrato.getInquilino().getNombre());
-                etDni.setText(contrato.getInquilino().getDNI() + " ");
-                etEmail.setText(contrato.getInquilino().getEmail());
+                etDni.setText(contrato.getInquilino().getDni() + " ");
+                etEmail.setText(contrato.getInquilino().getCorreo());
                 etTelefonoInquilino.setText(contrato.getInquilino().getTelefono());
-                etGarante.setText(contrato.getInquilino().getNombreGarante());
-                etTelefonoGarante.setText(contrato.getInquilino().getTelefonoGarante());
+                etGarante.setText(contrato.getGarante().getNombreGarante());
+                etTelefonoGarante.setText(contrato.getGarante().getTelefonoGarante());
             };
 
         });

@@ -5,29 +5,29 @@ import java.io.Serializable;
 public class Inquilino implements Serializable {
 
     private int id;
-    private String DNI;
+    private String dni;
     private String nombre;
     private String lugarTrabajo;
-    private String email;
+    private String correo;
     private String telefono;
     private String nombreGarante;
     private String telefonoGarante;
 
-    public Inquilino(int idInquilino, String DNI, String nombre, String lugarTrabajo, String email, String telefono) {
+    public Inquilino(int idInquilino, String dni, String nombre, String lugarTrabajo, String correo, String telefono) {
         this.id = idInquilino;
-        this.DNI = DNI;
+        this.dni = dni;
         this.nombre = nombre;
         this.lugarTrabajo = lugarTrabajo;
-        this.email = email;
+        this.correo = correo;
         this.telefono = telefono;
     }
 
-    public Inquilino(int idInquilino, String DNI, String nombre, String lugarTrabajo, String email, String telefono, String nombreGarante, String telefonoGarante) {
+    public Inquilino(int idInquilino, String dni, String nombre, String lugarTrabajo, String correo, String telefono, String nombreGarante, String telefonoGarante) {
         this.id = idInquilino;
-        this.DNI = DNI;
+        this.dni = dni;
         this.nombre = nombre;
         this.lugarTrabajo = lugarTrabajo;
-        this.email = email;
+        this.correo = correo;
         this.telefono = telefono;
         this.nombreGarante = nombreGarante;
         this.telefonoGarante = telefonoGarante;
@@ -41,12 +41,12 @@ public class Inquilino implements Serializable {
         this.id = idInquilino;
     }
 
-    public String getDNI() {
-        return DNI;
+    public String getDni() {
+        return dni;
     }
 
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getNombre() {
@@ -65,12 +65,12 @@ public class Inquilino implements Serializable {
         this.lugarTrabajo = lugarDeTrabajo;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getTelefono() {
