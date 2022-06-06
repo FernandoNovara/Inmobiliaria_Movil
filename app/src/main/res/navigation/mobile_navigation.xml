@@ -21,7 +21,11 @@
         android:id="@+id/nav_inmuebles"
         android:name="com.example.inmobiliarianovara.ui.Inmuebles.InmueblesFragment"
         android:label="@string/Inmuebles"
-        tools:layout="@layout/fragment_inmueble" />
+        tools:layout="@layout/fragment_inmueble" >
+        <action
+            android:id="@+id/action_nav_inmuebles_to_inmueblesFragment"
+            app:destination="@id/inmueblesFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_InmueblesAlquilados"
@@ -53,21 +57,40 @@
         android:id="@+id/inmueblesFragment"
         android:name="com.example.inmobiliarianovara.ui.Inmuebles.InmuebleFragment"
         android:label="inmueble_fragment"
-        tools:layout="@layout/inmueble_fragment" />
+        tools:layout="@layout/inmueble_fragment" >
+        <action
+            android:id="@+id/action_inmueblesFragment_to_nav_inmuebles"
+            app:destination="@id/nav_inmuebles" />
+    </fragment>
     <fragment
         android:id="@+id/nav_Contrato"
         android:name="com.example.inmobiliarianovara.ui.Contratos.ContratosFragment"
         android:label="fragment_contratos"
-        tools:layout="@layout/fragment_contratos" />
+        tools:layout="@layout/fragment_contratos" >
+        <action
+            android:id="@+id/action_nav_Contrato_to_detalleContrato"
+            app:destination="@id/detalleContrato" />
+    </fragment>
 
     <fragment
         android:id="@+id/detalleContrato"
         android:name="com.example.inmobiliarianovara.ui.Contratos.ContratoFragment"
         android:label="ContratoFragment"
-        tools:layout="@layout/detalle_contrato_fragment" />
+        tools:layout="@layout/detalle_contrato_fragment" >
+        <action
+            android:id="@+id/action_detalleContrato_to_PagoFragment"
+            app:destination="@id/PagoFragment" />
+        <action
+            android:id="@+id/action_detalleContrato_to_nav_Contrato"
+            app:destination="@id/nav_Contrato" />
+    </fragment>
     <fragment
         android:id="@+id/PagoFragment"
         android:name="com.example.inmobiliarianovara.ui.Contratos.PagoFragment"
-        android:label="PagoFragment" />
+        android:label="PagoFragment" >
+        <action
+            android:id="@+id/action_PagoFragment_to_detalleContrato"
+            app:destination="@id/detalleContrato" />
+    </fragment>
 
 </navigation>

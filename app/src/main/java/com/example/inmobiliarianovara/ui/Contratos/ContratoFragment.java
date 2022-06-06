@@ -65,8 +65,8 @@ public class ContratoFragment extends Fragment {
             public void onChanged(Contrato contrato)
             {
                 etCodigoContrato.setText(contrato.getIdContrato() + "");
-                etFechaInicio.setText(contrato.getFechaInicio());
-                etFechaFin.setText(contrato.getFechaFin());
+                etFechaInicio.setText(contrato.getFechaInicioCorta());
+                etFechaFin.setText(contrato.getFechaFinalCorta());
                 etMontoAlquiler.setText("$" + contrato.getInmueble().getPrecio());
                 etInquilino.setText(contrato.getInquilino().getNombre());
                 etInmueble.setText(contrato.getInmueble().getDireccion());

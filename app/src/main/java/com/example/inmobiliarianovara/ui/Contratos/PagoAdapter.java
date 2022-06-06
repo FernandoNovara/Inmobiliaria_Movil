@@ -43,12 +43,12 @@ public class PagoAdapter extends RecyclerView.Adapter<PagoAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PagoAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.tvCodigo.setText(pagos.get(position).getIdPago() + "");
         holder.tvNumero.setText(pagos.get(position).getNumero()+"");
         holder.tvCodigoContrato.setText(pagos.get(position).getContrato().getIdContrato()+"");
-        holder.tvFecha.setText(pagos.get(position).getFechaDePago()+"");
+        holder.tvFecha.setText(pagos.get(position).getFechaPago()+"");
         holder.tvImporte.setText("$" + pagos.get(position).getImporte());
         ContratoPago = pagos.get(position).getContrato();
     }
@@ -68,17 +68,7 @@ public class PagoAdapter extends RecyclerView.Adapter<PagoAdapter.ViewHolder> {
             tvNumero = itemView.findViewById(R.id.tvNumero);
             tvImporte = itemView.findViewById(R.id.tvImporte);
             tvFecha = itemView.findViewById(R.id.tvFecha);
-            /*itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Bundle bundle = new Bundle();
-                    Contrato cont = ContratoPago;
-                    bundle.putSerializable("contrato", cont);
-                    Navigation.findNavController((Activity) context, R.id.nav_host_fragment_content_main).navigate(R.id.PagoFragment, bundle);
-                }
-            });
 
-             */
         }
     }
 }

@@ -40,6 +40,18 @@ public class InmueblesAlquiladosViewModel extends AndroidViewModel {
         }
         return inmuebles;
     }
+    public LiveData<Inquilino> getInquilino() {
+        if (inquilino == null) {
+            inquilino = new MutableLiveData<>();
+        }
+        return inquilino;
+    }
+    public LiveData<ArrayList<Contrato>> getContratos() {
+        if (contratos == null) {
+            contratos = new MutableLiveData<>();
+        }
+        return contratos;
+    }
 
     public void cargarInmueblesAlquilados() {
         ArrayList<Contrato> listaContrato = new ArrayList<>();
@@ -52,8 +64,9 @@ public class InmueblesAlquiladosViewModel extends AndroidViewModel {
 
                 if (response.isSuccessful()){
                     response.body().forEach(e -> {
-                                Contrato contrato = new Contrato(e.getIdContrato(),e.getFechaInicio(),e.getFechaFin(),
-                                e.getInmueble().getPrecio(),e.getInquilino(), e.getInmueble());
+                        Contrato contrato= new Contrato(e.getIdContrato(),e.getFechaInicio(),e.getFechaFinal(),
+                                e.getInmueble().getPrecio(),e.getInquilino(), e.getInmueble(),e.getNombreGarante(),
+                                e.getTelefonoGarante());
                                 listaContrato.add(contrato);
                     });
 

@@ -56,7 +56,7 @@ public class ContratosViewModel extends AndroidViewModel {
                     {
                         Contrato contrato = new Contrato(e.getIdContrato(),
                                                         e.getFechaInicio(),
-                                                        e.getFechaFin(),
+                                                        e.getFechaFinal(),
                                                         e.getMontoAlquiler(),
                                                         e.getInquilino(),
                                                         e.getInmueble());

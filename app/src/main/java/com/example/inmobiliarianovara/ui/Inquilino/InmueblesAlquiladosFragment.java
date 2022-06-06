@@ -15,15 +15,18 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.inmobiliarianovara.R;
+import com.example.inmobiliarianovara.modelo.Contrato;
 import com.example.inmobiliarianovara.modelo.Inmueble;
+import com.example.inmobiliarianovara.ui.Contratos.ContratosViewModel;
 
 import java.util.ArrayList;
 
 public class InmueblesAlquiladosFragment extends Fragment {
     private RecyclerView rvInmueblesAlquilados;
     private InmueblesAlquiladosViewModel inmueblesAlquiladosViewModel;
-    Inmueble_alquilados_Adapter adapter;
-    Context context;
+    private ContratosViewModel contratosViewModel;
+    private Inmueble_alquilados_Adapter adapter;
+    private Context context;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -38,12 +41,12 @@ public class InmueblesAlquiladosFragment extends Fragment {
     private void inicializar(View view) {
         rvInmueblesAlquilados = view.findViewById(R.id.rvInmueblesAlquilados);
         inmueblesAlquiladosViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InmueblesAlquiladosViewModel.class);
-        inmueblesAlquiladosViewModel.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
+        inmueblesAlquiladosViewModel.getContratos().observe(getViewLifecycleOwner(), new Observer<ArrayList<Contrato>>() {
             @Override
-            public void onChanged(ArrayList<Inmueble> inmuebles) {
+            public void onChanged(ArrayList<Contrato> contratos) {
                 GridLayoutManager gridLayoutManager= new GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false);
                 rvInmueblesAlquilados.setLayoutManager(gridLayoutManager);
-                adapter = new Inmueble_alquilados_Adapter(context, inmuebles, getLayoutInflater());
+                adapter = new Inmueble_alquilados_Adapter(context, contratos, getLayoutInflater());
                 rvInmueblesAlquilados.setAdapter(adapter);
             }
         });

@@ -9,19 +9,19 @@ public class Inmueble implements Serializable {
     private String direccion;
     private String uso;
     private String tipo;
-    private int ambientes;
+    private int ambiente;
     private double precio;
     private Propietario propietario;
     //En falso significa que el innmueble no está disponible por alguna falla en el mismo.
     private boolean estado=true;
     private String imagen;
 
-    public Inmueble(int idInmueble, String direccion, String uso, String tipo, int ambientes, double precio, Propietario propietario, boolean estado, String imagen) {
+    public Inmueble(int idInmueble, String direccion, String uso, String tipo, int ambiente, double precio, Propietario propietario, boolean estado, String imagen) {
         this.idInmueble = idInmueble;
         this.direccion = direccion;
         this.uso = uso;
         this.tipo = tipo;
-        this.ambientes = ambientes;
+        this.ambiente = ambiente;
         this.precio = precio;
         this.propietario = propietario;
         this.estado = estado;
@@ -62,12 +62,12 @@ public class Inmueble implements Serializable {
         this.tipo = tipo;
     }
 
-    public int getAmbientes() {
-        return ambientes;
+    public int getAmbiente() {
+        return ambiente;
     }
 
-    public void setAmbientes(int ambientes) {
-        this.ambientes = ambientes;
+    public void setAmbiente(int ambiente) {
+        this.ambiente = ambiente;
     }
 
     public double getPrecio() {
@@ -110,13 +110,13 @@ public class Inmueble implements Serializable {
         return idInmueble == inmueble.idInmueble;
     }
 
-    public void setValue(int idInmueble, String uso, String tipo, String direccion, int ambientes, double precio, Propietario propietario, boolean estado, String imagen)
+    public void setValue(int idInmueble, String uso, String tipo, String direccion, int ambiente, double precio, Propietario propietario, boolean estado, String imagen)
     {
         this.idInmueble = idInmueble;
         this.direccion = direccion;
         this.uso = uso;
         this.tipo = tipo;
-        this.ambientes = ambientes;
+        this.ambiente = ambiente;
         this.precio = precio;
         this.propietario = propietario;
         this.estado = estado;

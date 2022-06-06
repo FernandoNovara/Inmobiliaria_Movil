@@ -91,7 +91,7 @@ public class ApiClientRetrofit {
         Call<Inquilino> ObtenerInquilinos(@Path("id") int id,@Header ("Authorization") String token);
 
         //Pago
-        @GET("Pagos/{id}")
+        @GET("Pago/{id}")
         Call<List<Pago>> PagosContrato (@Path("id") int id ,@Header("Authorization") String token);
 
     }

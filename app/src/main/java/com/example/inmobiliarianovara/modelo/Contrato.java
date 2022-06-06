@@ -7,7 +7,7 @@ public class Contrato implements Serializable {
 
     private int idContrato;
     private String fechaInicio;
-    private String fechaFin;
+    private String fechaFinal;
     private double montoAlquiler;
     private Inquilino inquilino;
     private Inmueble inmueble;
@@ -17,7 +17,7 @@ public class Contrato implements Serializable {
     public Contrato(int idContrato, String fechaInicio, String fechaFin, double montoAlquiler, Inquilino inquilino, Inmueble inmueble, String nombreGarante, String telefonoGarante) {
         this.idContrato = idContrato;
         this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
+        this.fechaFinal = fechaFin;
         this.montoAlquiler = montoAlquiler;
         this.inquilino = inquilino;
         this.inmueble = inmueble;
@@ -28,7 +28,7 @@ public class Contrato implements Serializable {
     public Contrato(int idContrato, String fechaInicio, String fechaFin, double montoAlquiler, Inquilino inquilino, Inmueble inmueble) {
         this.idContrato = idContrato;
         this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
+        this.fechaFinal = fechaFin;
         this.montoAlquiler = montoAlquiler;
         this.inquilino = inquilino;
         this.inmueble = inmueble;
@@ -54,12 +54,12 @@ public class Contrato implements Serializable {
         this.fechaInicio = fechaInicio;
     }
 
-    public String getFechaFin() {
-        return fechaFin;
+    public String getFechaFinal() {
+        return fechaFinal;
     }
 
-    public void setFechaFin(String fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setFechaFinal(String fechaFin) {
+        this.fechaFinal = fechaFinal;
     }
 
     public double getMontoAlquiler() {
@@ -93,6 +93,23 @@ public class Contrato implements Serializable {
     public String getTelefonoGarante() { return TelefonoGarante; }
 
     public void setTelefonoGarante(String telefonoGarante) { TelefonoGarante = telefonoGarante; }
+
+    public String getFechaInicioCorta()
+    {
+        String año = getFechaInicio().substring(0,4);
+        String mes = getFechaInicio().substring(5,7);
+        String dia = getFechaInicio().substring(8,10);
+        return dia +"/"+mes+"/"+año;
+    }
+
+    public String getFechaFinalCorta()
+    {
+        String año = getFechaFinal().substring(0,4);
+        String mes = getFechaFinal().substring(5,7);
+        String dia = getFechaFinal().substring(8,10);
+        return dia +"/"+mes+"/"+año;
+    }
+
 
     @Override
     public boolean equals(Object o) {

@@ -60,7 +60,7 @@ public class InmuebleFragment extends Fragment {
                 tvDireccion.setText(inmueble.getDireccion());
                 tvTipo.setText(inmueble.getTipo());
                 tvUso.setText(inmueble.getUso());
-                tvAmbientes.setText(inmueble.getAmbientes() + "");
+                tvAmbientes.setText(inmueble.getAmbiente() + "");
                 tvPrecio.setText("$" + inmueble.getPrecio());
                 cbEstado.setChecked(inmueble.isEstado());
 
@@ -68,8 +68,6 @@ public class InmuebleFragment extends Fragment {
                         .load(inmueble.getImagen())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(ivImagenInmueble);
-
-
             }
         });
         inmuebleViewModel.cargarInmueble(getArguments());

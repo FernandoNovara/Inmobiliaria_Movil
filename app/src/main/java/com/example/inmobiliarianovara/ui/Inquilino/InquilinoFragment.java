@@ -22,7 +22,7 @@ import com.example.inmobiliarianovara.ui.Inquilino.InquilinoViewModel;
 public class InquilinoFragment extends Fragment {
 
     private InquilinoViewModel inquilinoViewModel;
-    private EditText etCodigo,etNombre,etApellido,etDni,etEmail,etTelefonoInquilino,etGarante,etTelefonoGarante;
+    private EditText etCodigo,etNombre,etDni,etEmail,etTelefonoInquilino,etGarante,etTelefonoGarante;
 
     public static InquilinoFragment newInstance() {
         return new InquilinoFragment();
@@ -41,8 +41,7 @@ public class InquilinoFragment extends Fragment {
     {
         etCodigo = view.findViewById(R.id.etCodigoInquilino);
         etNombre = view.findViewById(R.id.etNombreInquilino);
-        etApellido = view.findViewById(R.id.etApellidoInquilino);
-        etDni = view.findViewById(R.id.etDni);
+        etDni = view.findViewById(R.id.etDniInquilino);
         etEmail = view.findViewById(R.id.etEmailInquilino);
         etTelefonoInquilino = view.findViewById(R.id.etTelefonoInquilino);
         etGarante = view.findViewById(R.id.etNombreGarante);
@@ -54,7 +53,6 @@ public class InquilinoFragment extends Fragment {
             public void onChanged(Contrato contrato) {
                 etCodigo.setText(contrato.getInquilino().getIdInquilino() + " ");
                 etNombre.setText(contrato.getInquilino().getNombre());
-                etApellido.setText(contrato.getInquilino().getApellido());
                 etDni.setText(contrato.getInquilino().getDNI() + " ");
                 etEmail.setText(contrato.getInquilino().getEmail());
                 etTelefonoInquilino.setText(contrato.getInquilino().getTelefono());

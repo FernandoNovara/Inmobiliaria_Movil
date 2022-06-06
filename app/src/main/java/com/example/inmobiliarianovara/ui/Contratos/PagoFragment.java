@@ -32,7 +32,7 @@ public class PagoFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.detalle_contrato_fragment, container, false);
+        View root = inflater.inflate(R.layout.item_detalle_pago, container, false);
         context = root.getContext();
         inicializar(root);
         return root;

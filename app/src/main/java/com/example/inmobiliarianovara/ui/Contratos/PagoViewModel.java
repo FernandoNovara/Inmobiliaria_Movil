@@ -51,7 +51,7 @@ public class PagoViewModel extends AndroidViewModel {
             public void onResponse(Call<List<Pago>> call, Response<List<Pago>> response) {
                 if (response.isSuccessful()){
                     response.body().forEach(e -> {
-                        Pago pago= new Pago(e.getIdPago(),e.getNumero(),e.getContrato(),e.getImporte(),e.getFechaDePago());
+                        Pago pago= new Pago(e.getIdPago(),e.getNumero(),e.getContrato(),e.getImporte(),e.getFechaPago());
                         pagosList.add(pago);
                     });
 
