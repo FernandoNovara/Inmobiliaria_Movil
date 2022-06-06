@@ -65,5 +65,9 @@
         android:name="com.example.inmobiliarianovara.ui.Contratos.ContratoFragment"
         android:label="ContratoFragment"
         tools:layout="@layout/detalle_contrato_fragment" />
+    <fragment
+        android:id="@+id/PagoFragment"
+        android:name="com.example.inmobiliarianovara.ui.Contratos.PagoFragment"
+        android:label="PagoFragment" />
 
 </navigation>

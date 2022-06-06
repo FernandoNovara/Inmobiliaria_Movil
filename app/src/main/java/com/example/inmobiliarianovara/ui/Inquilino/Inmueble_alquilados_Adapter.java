@@ -61,8 +61,8 @@ public class Inmueble_alquilados_Adapter extends RecyclerView.Adapter<Inmueble_a
         ImageView ivImagenInmuebleAlquilado;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            ivImagenInmuebleAlquilado = itemView.findViewById(R.id.ivImagenInmuebleAlquilado);
-            tvDireccionAlquilado = itemView.findViewById(R.id.tvDireccionAlquilado);
+            ivImagenInmuebleAlquilado = itemView.findViewById(R.id.ivImagenInmueble);
+            tvDireccionAlquilado = itemView.findViewById(R.id.tvDireccion);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

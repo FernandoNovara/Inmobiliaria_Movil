@@ -11,9 +11,11 @@ import com.example.inmobiliarianovara.modelo.Inmueble;
 
 public class InmuebleViewModel extends ViewModel {
     private MutableLiveData<Inmueble> inmueble;
+
     public InmuebleViewModel() {
         super();
     }
+
     public LiveData<Inmueble> getInmueble() {
         if (inmueble == null) {
             inmueble = new MutableLiveData<>();

@@ -8,24 +8,28 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.inmobiliarianovara.R;
+import com.example.inmobiliarianovara.modelo.Contrato;
 import com.example.inmobiliarianovara.modelo.Inmueble;
 import com.example.inmobiliarianovara.modelo.Inquilino;
-import com.example.inmobiliarianovara.ui.Inmuebles.InmuebleViewModel;
+import com.example.inmobiliarianovara.ui.Inquilino.InquilinoViewModel;
 
 public class InquilinoFragment extends Fragment {
 
     private InquilinoViewModel inquilinoViewModel;
     private EditText etCodigo,etNombre,etApellido,etDni,etEmail,etTelefonoInquilino,etGarante,etTelefonoGarante;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        InquilinoViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(InquilinoViewModel.class);
+    public static InquilinoFragment newInstance() {
+        return new InquilinoFragment();
+    }
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_inquilino,container,false);
         InicializarVista(root);
@@ -45,17 +49,17 @@ public class InquilinoFragment extends Fragment {
         etTelefonoGarante = view.findViewById(R.id.etTelefonoGarante);
 
         inquilinoViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InquilinoViewModel.class);
-        inquilinoViewModel.getInquilino().observe(getActivity(), new Observer<Inquilino>() {
+        inquilinoViewModel.getInquilino().observe(getActivity(), new Observer<Contrato>() {
             @Override
-            public void onChanged(Inquilino inquilino) {
-                etCodigo.setText(inquilino.getIdInquilino() + " ");
-                etNombre.setText(inquilino.getNombre());
-                etApellido.setText(inquilino.getApellido());
-                etDni.setText(inquilino.getDNI() + " ");
-                etEmail.setText(inquilino.getEmail());
-                etTelefonoInquilino.setText(inquilino.getTelefono());
-                etGarante.setText(inquilino.getNombreGarante());
-                etTelefonoGarante.setText(inquilino.getTelefonoGarante());
+            public void onChanged(Contrato contrato) {
+                etCodigo.setText(contrato.getInquilino().getIdInquilino() + " ");
+                etNombre.setText(contrato.getInquilino().getNombre());
+                etApellido.setText(contrato.getInquilino().getApellido());
+                etDni.setText(contrato.getInquilino().getDNI() + " ");
+                etEmail.setText(contrato.getInquilino().getEmail());
+                etTelefonoInquilino.setText(contrato.getInquilino().getTelefono());
+                etGarante.setText(contrato.getInquilino().getNombreGarante());
+                etTelefonoGarante.setText(contrato.getInquilino().getTelefonoGarante());
             };
 
         });
@@ -64,10 +68,5 @@ public class InquilinoFragment extends Fragment {
 
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-
-    }
 
 }

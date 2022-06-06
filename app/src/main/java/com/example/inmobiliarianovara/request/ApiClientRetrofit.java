@@ -71,14 +71,28 @@ public class ApiClientRetrofit {
 
 
         //obtener inmuebles
-        @GET("Inmueble/")
-        Call<List<Inmueble>> listaDeInmuebles(@Header("Authorization") String token);
+        @GET("Inmueble")
+        Call<ArrayList<Inmueble>> listaDeInmuebles(@Header("Authorization") String token);
 
         //Obtener inmuebles por id
         @GET("Inmueble/{id}")
         Call<Inmueble> inmuebleXId(@Path("id") int id, @Header ("Authorization") String token);
 
+        //Obtener Contrato por id de inmueble
+        @GET("Contrato/{id}")
+        Call<List<Contrato>> obtenerContratoVigente(@Path("id") int id, @Header ("Authorization") String token);
 
+        //Obtener Contratos de Propietario logueado
+        @GET("Contrato")
+        Call<List<Contrato>> ObtenerContratos(@Header ("Authorization") String token);
+
+        //Obtener Inquilinos por id de contrato
+        @GET("Inquilino/{id}")
+        Call<Inquilino> ObtenerInquilinos(@Path("id") int id,@Header ("Authorization") String token);
+
+        //Pago
+        @GET("Pagos/{id}")
+        Call<List<Pago>> PagosContrato (@Path("id") int id ,@Header("Authorization") String token);
 
     }
 

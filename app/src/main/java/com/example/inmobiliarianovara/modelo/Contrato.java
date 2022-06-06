@@ -11,8 +11,20 @@ public class Contrato implements Serializable {
     private double montoAlquiler;
     private Inquilino inquilino;
     private Inmueble inmueble;
+    private String NombreGarante;
+    private String TelefonoGarante;
 
-    public Contrato() {}
+    public Contrato(int idContrato, String fechaInicio, String fechaFin, double montoAlquiler, Inquilino inquilino, Inmueble inmueble, String nombreGarante, String telefonoGarante) {
+        this.idContrato = idContrato;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.montoAlquiler = montoAlquiler;
+        this.inquilino = inquilino;
+        this.inmueble = inmueble;
+        this.NombreGarante = nombreGarante;
+        this.TelefonoGarante = telefonoGarante;
+    }
+
     public Contrato(int idContrato, String fechaInicio, String fechaFin, double montoAlquiler, Inquilino inquilino, Inmueble inmueble) {
         this.idContrato = idContrato;
         this.fechaInicio = fechaInicio;
@@ -20,6 +32,10 @@ public class Contrato implements Serializable {
         this.montoAlquiler = montoAlquiler;
         this.inquilino = inquilino;
         this.inmueble = inmueble;
+    }
+
+    public Contrato() {
+
     }
 
     public int getIdContrato() {
@@ -54,7 +70,6 @@ public class Contrato implements Serializable {
         this.montoAlquiler = montoAlquiler;
     }
 
-
     public Inquilino getInquilino() {
         return inquilino;
     }
@@ -71,6 +86,14 @@ public class Contrato implements Serializable {
         this.inmueble = inmueble;
     }
 
+    public String getNombreGarante() { return NombreGarante; }
+
+    public void setNombreGarante(String nombreGarante) { NombreGarante = nombreGarante; }
+
+    public String getTelefonoGarante() { return TelefonoGarante; }
+
+    public void setTelefonoGarante(String telefonoGarante) { TelefonoGarante = telefonoGarante; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,6 +101,7 @@ public class Contrato implements Serializable {
         Contrato contrato = (Contrato) o;
         return idContrato == contrato.idContrato;
     }
+
 
     @Override
     public int hashCode() {

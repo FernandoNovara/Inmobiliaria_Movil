@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.inmobiliarianovara.R;
+import com.example.inmobiliarianovara.modelo.Contrato;
 import com.example.inmobiliarianovara.modelo.Inmueble;
 
 import java.util.ArrayList;
@@ -23,9 +24,9 @@ import java.util.ArrayList;
 public class ContratosFragment extends Fragment {
 
     private ContratosViewModel contratosViewModel;
-    private RecyclerView rvInmuebles;
+    private RecyclerView rvContratos;
     private InmuebleConContratoAdapter adapter;
-    Context context;
+    private Context context;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -39,18 +40,19 @@ public class ContratosFragment extends Fragment {
 
 
     private void inicializar(View view) {
+        rvContratos = view.findViewById(R.id.rvContratos);
         contratosViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(this.getActivity().getApplication()).create(ContratosViewModel.class);
-        rvInmuebles = view.findViewById(R.id.rvInmuebles);
-        contratosViewModel.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
+        contratosViewModel.getContrato().observe(getViewLifecycleOwner(), new Observer<ArrayList<Contrato>>() {
             @Override
-            public void onChanged(ArrayList<Inmueble> inmuebles) {
-                adapter = new InmuebleConContratoAdapter(context, inmuebles, getLayoutInflater());
-                GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 2, RecyclerView.VERTICAL, false);
-                rvInmuebles.setLayoutManager(gridLayoutManager);
-                rvInmuebles.setAdapter(adapter);
+            public void onChanged(ArrayList<Contrato> contratos)
+            {
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false);
+                rvContratos.setLayoutManager(gridLayoutManager);
+                adapter = new InmuebleConContratoAdapter(context, contratos, getLayoutInflater());
+                rvContratos.setAdapter(adapter);
             }
         });
-       // contratosViewModel.cargarInmueblesConContrato();
+       contratosViewModel.cargarInmueblesConContrato();
     }
 
 

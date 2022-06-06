@@ -53,7 +53,16 @@
         <entry key="..\:/Users/Ferna/AndroidStudioProjects/InmobiliariaNovara_Movil/app/src/main/res/menu/activity_main_drawer.xml" value="0.33" />
         <entry key="..\:/Users/Ferna/AndroidStudioProjects/InmobiliariaNovara_Movil/app/src/main/res/menu/main.xml" value="0.19414414414414413" />
         <entry key="..\:/Users/Ferna/AndroidStudioProjects/InmobiliariaNovara_Movil/app/src/main/res/mipmap-anydpi-v26/ic_banner.xml" value="0.1745" />
+        <entry key="..\:/Users/Ferna/AndroidStudioProjects/Inmobiliaria_Movil/app/src/main/res/layout/activity_login.xml" value="0.17592592592592593" />
+        <entry key="..\:/Users/Ferna/AndroidStudioProjects/Inmobiliaria_Movil/app/src/main/res/layout/detalle_contrato_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/Ferna/AndroidStudioProjects/Inmobiliaria_Movil/app/src/main/res/layout/detalle_de_contrato_fragment.xml" value="0.17592592592592593" />
+        <entry key="..\:/Users/Ferna/AndroidStudioProjects/Inmobiliaria_Movil/app/src/main/res/layout/detalle_de_pago.xml" value="0.19414414414414413" />
+        <entry key="..\:/Users/Ferna/AndroidStudioProjects/Inmobiliaria_Movil/app/src/main/res/layout/fragment_contratos.xml" value="0.17592592592592593" />
         <entry key="..\:/Users/Ferna/AndroidStudioProjects/Inmobiliaria_Movil/app/src/main/res/layout/fragment_perfil.xml" value="0.25" />
+        <entry key="..\:/Users/Ferna/AndroidStudioProjects/Inmobiliaria_Movil/app/src/main/res/layout/item_detalle_pago.xml" value="0.19414414414414413" />
+        <entry key="..\:/Users/Ferna/AndroidStudioProjects/Inmobiliaria_Movil/app/src/main/res/layout/item_inmueble_alquilado_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/Ferna/AndroidStudioProjects/Inmobiliaria_Movil/app/src/main/res/layout/nav_header_main.xml" value="0.19414414414414413" />
+        <entry key="..\:/Users/Ferna/AndroidStudioProjects/Inmobiliaria_Movil/app/src/main/res/layout/pagos_fragment.xml" value="0.22" />
       </map>
     </option>
   </component>

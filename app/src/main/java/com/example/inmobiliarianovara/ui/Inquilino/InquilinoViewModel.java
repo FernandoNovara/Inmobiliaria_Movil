@@ -1,21 +1,26 @@
 package com.example.inmobiliarianovara.ui.Inquilino;
 
+import android.app.Application;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import com.example.inmobiliarianovara.modelo.Inmueble;
-import com.example.inmobiliarianovara.modelo.Inquilino;
-import com.example.inmobiliarianovara.request.ApiClient;
+import com.example.inmobiliarianovara.modelo.Contrato;
 
-public class InquilinoViewModel extends ViewModel {
-    private MutableLiveData<Inquilino> inquilino;
-    public InquilinoViewModel() {
-        super();
+public class InquilinoViewModel extends AndroidViewModel {
+
+    private MutableLiveData<Contrato> inquilino;
+
+    public InquilinoViewModel(@NonNull Application application) {
+        super(application);
     }
-    public LiveData<Inquilino> getInquilino() {
+
+
+    public LiveData<Contrato> getInquilino()
+    {
         if (inquilino == null) {
             inquilino = new MutableLiveData<>();
         }
@@ -23,9 +28,9 @@ public class InquilinoViewModel extends ViewModel {
     }
 
     public void cargarInquilino(Bundle bundle) {
-        Inmueble inmueble = (Inmueble) bundle.get("inmueble");
-        Inquilino inquilino= ApiClient.getApi().obtenerInquilino(inmueble);
-        this.inquilino.setValue(inquilino);
+        Contrato contrato = (Contrato) bundle.getSerializable("contrato");
+        this.inquilino.setValue(contrato);
+
 
     }
 

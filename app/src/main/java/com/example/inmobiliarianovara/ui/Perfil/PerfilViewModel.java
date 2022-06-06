@@ -117,7 +117,7 @@ public class PerfilViewModel extends AndroidViewModel {
             @Override
             public void onFailure(Call<Propietario> call, Throwable t)
             {
-                Log.d("Token",t.toString());
+                Log.d("Token",t.getMessage());
             }
         });
     }

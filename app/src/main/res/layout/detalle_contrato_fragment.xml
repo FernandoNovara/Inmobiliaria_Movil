@@ -25,18 +25,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnPagos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_radius"
-            android:text="Pagos"
-            android:textColor="#fff"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.914"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/etDni" />
-
         <TextView
             android:id="@+id/tvCodigoContrato"
             android:layout_width="wrap_content"
@@ -68,19 +56,19 @@
             app:layout_constraintTop_toBottomOf="@+id/tvCodigoContrato" />
 
         <TextView
-            android:id="@+id/tvEmail"
+            android:id="@+id/tvFechaInicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Inquilino"
+            android:text="Fecha de Inicio"
             android:textColor="#fff"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.097"
+            app:layout_constraintHorizontal_bias="0.11"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etDni" />
+            app:layout_constraintTop_toBottomOf="@+id/etCodigoContrato" />
 
         <EditText
-            android:id="@+id/etNombreInquilino"
+            android:id="@+id/etFechaInicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -98,57 +86,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvFechaInicio" />
 
-        <EditText
-            android:id="@+id/etEmailInquilino"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/border_radius"
-            android:ems="10"
-            android:enabled="false"
-            android:hint="Inquilino"
-            android:minHeight="48dp"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textColorHint="#838383"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.181"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
-
-        <EditText
-            android:id="@+id/etTelefonoInquilino"
+        <TextView
+            android:id="@+id/tvFechaFinal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@drawable/border_radius"
-            android:ems="10"
-            android:enabled="false"
-            android:hint="Inmueble"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textColorHint="#838383"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.181"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvInmueble" />
-
-        <TextView
-            android:id="@+id/tvInmueble"
-            android:layout_width="73dp"
-            android:layout_height="15dp"
-            android:layout_marginTop="8dp"
-            android:text="Inmueble"
+            android:text="Fecha Final"
             android:textColor="#fff"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintHorizontal_bias="0.102"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEmailInquilino" />
+            app:layout_constraintTop_toBottomOf="@+id/etFechaInicio" />
 
         <EditText
-            android:id="@+id/etApellidoInquilino"
+            android:id="@+id/etFechaFinal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -176,34 +127,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.117"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etApellidoInquilino" />
-
-        <TextView
-            android:id="@+id/tvFechaInicio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Fecha de Inicio"
-            android:textColor="#fff"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.11"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etCodigoContrato" />
-
-        <TextView
-            android:id="@+id/tvFechaFinal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Fecha Final"
-            android:textColor="#fff"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.102"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etNombreInquilino" />
+            app:layout_constraintTop_toBottomOf="@+id/etFechaFinal" />
 
         <EditText
-            android:id="@+id/etDni"
+            android:id="@+id/etDniInquilino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -219,6 +146,94 @@
             app:layout_constraintHorizontal_bias="0.181"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDniInquilino" />
+
+        <Button
+            android:id="@+id/btnPagos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_radius"
+            android:text="Pagos"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.914"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etDniInquilino" />
+
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Inquilino"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.097"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnPagos" />
+
+
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_radius"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="Inquilino"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textColorHint="#838383"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.181"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+        <TextView
+            android:id="@+id/tvInmueble"
+            android:layout_width="73dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="8dp"
+            android:text="Inmueble"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+        <EditText
+            android:id="@+id/etInmueble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border_radius"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="Inmueble"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textColorHint="#838383"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.181"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvInmueble" />
+
+
+
+
+
+
+
+
+
+
+
+
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"

@@ -1,4 +1,4 @@
-package com.example.inmobiliarianovara.ui.Pago;
+package com.example.inmobiliarianovara.ui.Contratos;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,21 +11,24 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.inmobiliarianovara.R;
 import com.example.inmobiliarianovara.modelo.Pago;
 import java.util.ArrayList;
 
 public class PagoFragment extends Fragment {
 
-    private PagoViewModel mViewModel;
+    private RecyclerView rvPagoContrato;
+    private Context context;
+    private PagoAdapter adapter;
+    private PagoViewModel pagoViewModel;
 
     public static PagoFragment newInstance() {
         return new PagoFragment();
     }
 
-    Context context;
-    ListView lvPagos;
-    PagoViewModel pagoViewModel;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -35,14 +38,17 @@ public class PagoFragment extends Fragment {
         return root;
     }
 
-    private void inicializar(View view) {
+    private void inicializar(View view)
+    {
+        rvPagoContrato = view.findViewById(R.id.rvPagoContrato);
         pagoViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(PagoViewModel.class);
-        lvPagos = view.findViewById(R.id.etCodigoContrato);
         pagoViewModel.getPagos().observe(getViewLifecycleOwner(), new Observer<ArrayList<Pago>>() {
             @Override
             public void onChanged(ArrayList<Pago> pagos) {
-                PagoAdapter adapter = new PagoAdapter(context, R.layout.pagos_fragment, pagos, getLayoutInflater());
-                lvPagos.setAdapter(adapter);
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(context,1,GridLayoutManager.VERTICAL,false);
+                rvPagoContrato.setLayoutManager(gridLayoutManager);
+                adapter = new PagoAdapter(context, pagos, getLayoutInflater());
+                rvPagoContrato.setAdapter(adapter);
             }
         });
         pagoViewModel.cargarPagos(getArguments());

@@ -110,6 +110,19 @@ public class Inmueble implements Serializable {
         return idInmueble == inmueble.idInmueble;
     }
 
+    public void setValue(int idInmueble, String uso, String tipo, String direccion, int ambientes, double precio, Propietario propietario, boolean estado, String imagen)
+    {
+        this.idInmueble = idInmueble;
+        this.direccion = direccion;
+        this.uso = uso;
+        this.tipo = tipo;
+        this.ambientes = ambientes;
+        this.precio = precio;
+        this.propietario = propietario;
+        this.estado = estado;
+        this.imagen = imagen;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(idInmueble);
